@@ -11,6 +11,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="ja"
+                href="https://PeterZhang9595.github.io/ja/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="zh-cn"
                 href="https://PeterZhang9595.github.io/categories/"
                 />
@@ -18,11 +23,6 @@
                 rel="alternate"
                 hreflang="zh-tw"
                 href="https://PeterZhang9595.github.io/zh-tw/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://PeterZhang9595.github.io/ja/categories/"
                 />
     <xhtml:link
                 rel="alternate"
