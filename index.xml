@@ -13,10 +13,10 @@
         <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>https://PeterZhang9595.github.io/p/recommendation/</guid>
-        <description>&lt;img src="https://PeterZhang9595.github.io/p/recommendation/tiktok.jpg" alt="Featured image of post 短视频平台常见推荐算法初探" /&gt;&lt;h2 id=&#34;动机--tableofcontents-&#34;&gt;动机 {{ .TableOfContents }}
+        <description>&lt;img src="https://PeterZhang9595.github.io/p/recommendation/tiktok.jpg" alt="Featured image of post 短视频平台常见推荐算法初探" /&gt;&lt;h2 id=&#34;动机&#34;&gt;动机
 &lt;/h2&gt;&lt;p&gt;我平时不用小红书。这几天要出去旅游，因此在小红书上找了点攻略，顺便点进了主页里面几个帖子看了看。结果等下次再进入程序的时候，发现推荐页面已经全是我日常生活中经常关注的内容了：学业、绩点、篮球、影视、演员。堪比开盒一样恐怖。当然，我没忍住点了进去，因此失去了半小时本来用于做攻略的时间。
 出于一种强烈的自尊心，我想要研究一下“我到底是怎么被击败的”，因此决定写这篇笔记记录一下一些零碎的推荐算法设计。或许了解了这些机制，能够帮助我们更快地摆脱万恶的推荐算法的精神控制吧。&lt;/p&gt;
-&lt;h2 id=&#34;传统方法--tableofcontents-&#34;&gt;传统方法 {{ .TableOfContents }}
+&lt;h2 id=&#34;传统方法&#34;&gt;传统方法
 &lt;/h2&gt;</description>
         </item>
         <item>
