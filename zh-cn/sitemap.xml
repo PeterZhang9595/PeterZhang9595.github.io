@@ -39,13 +39,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
-                href="https://PeterZhang9595.github.io/zh-tw/post/"
+                hreflang="ja"
+                href="https://PeterZhang9595.github.io/ja/post/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://PeterZhang9595.github.io/ja/post/"
+                hreflang="zh-tw"
+                href="https://PeterZhang9595.github.io/zh-tw/post/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -176,13 +176,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
-                href="https://PeterZhang9595.github.io/zh-tw/tags/"
+                hreflang="ja"
+                href="https://PeterZhang9595.github.io/ja/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://PeterZhang9595.github.io/ja/tags/"
+                hreflang="zh-tw"
+                href="https://PeterZhang9595.github.io/zh-tw/tags/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -231,6 +231,8 @@
   </url><url>
     <loc>https://PeterZhang9595.github.io/p/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://PeterZhang9595.github.io/categories/paper-reading/</loc>
   </url><url>
     <loc>https://PeterZhang9595.github.io/%E5%85%B3%E4%BA%8E/</loc>
   </url><url>
