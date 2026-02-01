@@ -282,6 +282,7 @@
       <ol>
         <li><a href="#协同过滤">协同过滤</a></li>
         <li><a href="#wide--deep">Wide &amp; Deep</a></li>
+        <li><a href="#双塔召回模型">双塔召回模型</a></li>
       </ol>
     </li>
   </ol>
@@ -382,7 +383,7 @@ $$<p>
 现阶段这类方法并没有被淘汰，而是融入了深度学习方法中。因此在传统方法这一部分就不赘述了。</p>
 <h3 id="wide--deep">Wide &amp; Deep
 </h3><p>个人理解：从整体框架上就是同时结合了简单粗暴的记录匹配+深度学习的特征提取的方法。
-Wide部分：稀疏向量输入，配合Embedding工程，作为最终的输入层。
+Wide部分：稀疏向量输入，配合Embedding工程，作为最终的输入层。由于有一些特征本身就非常具有辨识度，比如一些显著的分类，所以它们就可以直接被送到最终的预测算子。
 Deep部分：深度神经网络对输入特征进行处理，隐式特征交叉，提高模型的泛化能力。
 具体流程可以参考下图
 <img src="/p/recommendation/wide_deep.jpg"
@@ -392,6 +393,25 @@ Deep部分：深度神经网络对输入特征进行处理，隐式特征交叉�
 	loading="lazy"
 	
 		alt="wide & deep"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="152"
+		data-flex-basis="367px"
+	
+></p>
+<h3 id="双塔召回模型">双塔召回模型
+</h3><p>在抖音的推送流中，采取的主要是双塔召回模型。
+个人理解是把内容（视频）和用户全都转化成特征向量扔到一个池子里，然后给用户推荐与他自己的用户特征相近的内容特征的那些视频。
+而正因如此就要使用深度学习模型把用户转化为用户表征，视频转化为内容表征，然后一起扔到内容池里。
+具体流程参考下图
+<img src="/p/recommendation/two_tower.jpg"
+	width="1280"
+	height="837"
+	srcset="/p/recommendation/two_tower_hu_710c4b64f3d2957e.jpg 480w, /p/recommendation/two_tower_hu_7cdb0688cab533a3.jpg 1024w"
+	loading="lazy"
+	
+		alt="two tower"
 	
 	
 		class="gallery-image" 
