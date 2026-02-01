@@ -16,8 +16,24 @@
         <description>&lt;img src="https://PeterZhang9595.github.io/p/recommendation/tiktok.jpg" alt="Featured image of post 短视频平台常见推荐算法初探" /&gt;&lt;h2 id=&#34;动机&#34;&gt;动机
 &lt;/h2&gt;&lt;p&gt;我平时不用小红书。这几天要出去旅游，因此在小红书上找了点攻略，顺便点进了主页里面几个帖子看了看。结果等下次再进入程序的时候，发现推荐页面已经全是我日常生活中经常关注的内容了：学业、绩点、篮球、影视、演员。堪比开盒一样恐怖。当然，我没忍住点了进去，因此失去了半小时本来用于做攻略的时间。
 出于一种强烈的自尊心，我想要研究一下“我到底是怎么被击败的”，因此决定写这篇笔记记录一下一些零碎的推荐算法设计。或许了解了这些机制，能够帮助我们更快地摆脱万恶的推荐算法的精神控制吧。&lt;/p&gt;
-&lt;h2 id=&#34;传统方法&#34;&gt;传统方法
-&lt;/h2&gt;</description>
+&lt;h2 id=&#34;抖音官方信息&#34;&gt;抖音官方信息
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;a class=&#34;link&#34; href=&#34;https://95152.douyin.com/transparency&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;抖音安全与信任中心&lt;/a&gt;&lt;/em&gt;
+虽然官话一大堆，但是还是讲了一点点真东西的。&lt;/p&gt;
+&lt;h3 id=&#34;协同过滤&#34;&gt;协同过滤
+&lt;/h3&gt;&lt;p&gt;推荐算法领域最经典的算法之一。核心思想很简单，判断两个用户的相似度，若相似度高，把一个用户看过而另外一个用户没看过的推荐给对方。
+相似度的计算一般使用余弦值方法。
+&lt;/p&gt;
+$$
+Similarity(A,B)=\frac{A \cdot B}{|A||B|}=\frac{\sum{a_i b_i}}{\sqrt{\sum{a_i^2}}\sqrt{\sum{b_i^2}}}
+$$&lt;p&gt;
+现阶段这类方法并没有被淘汰，而是融入了深度学习方法中。因此在传统方法这一部分就不赘述了。&lt;/p&gt;
+&lt;h3 id=&#34;wide--deep&#34;&gt;Wide &amp;amp; Deep
+&lt;/h3&gt;&lt;p&gt;个人理解：从整体框架上就是同时结合了简单粗暴的记录匹配+深度学习的特征提取的方法。
+Wide部分：稀疏向量输入，配合Embedding工程，作为最终的输入层。
+Deep部分：深度神经网络对输入特征进行处理，隐式特征交叉，提高模型的泛化能力。
+具体流程可以参考下图&lt;a class=&#34;link&#34; href=&#34;wide_deep.jpg&#34; &gt;wide &amp;amp; deep&lt;/a&gt;&lt;/p&gt;
+</description>
         </item>
         
     </channel>
