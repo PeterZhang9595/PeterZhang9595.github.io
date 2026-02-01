@@ -32,7 +32,21 @@ $$&lt;p&gt;
 &lt;/h3&gt;&lt;p&gt;个人理解：从整体框架上就是同时结合了简单粗暴的记录匹配+深度学习的特征提取的方法。
 Wide部分：稀疏向量输入，配合Embedding工程，作为最终的输入层。
 Deep部分：深度神经网络对输入特征进行处理，隐式特征交叉，提高模型的泛化能力。
-具体流程可以参考下图&lt;a class=&#34;link&#34; href=&#34;wide_deep.jpg&#34; &gt;wide &amp;amp; deep&lt;/a&gt;&lt;/p&gt;
+具体流程可以参考下图
+&lt;img src=&#34;https://PeterZhang9595.github.io/p/recommendation/wide_deep.jpg&#34;
+	width=&#34;1280&#34;
+	height=&#34;837&#34;
+	srcset=&#34;https://PeterZhang9595.github.io/p/recommendation/wide_deep_hu_767fec777ee18ad.jpg 480w, https://PeterZhang9595.github.io/p/recommendation/wide_deep_hu_2aed32c5ce0dc87a.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;wide &amp; deep&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;152&#34;
+		data-flex-basis=&#34;367px&#34;
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
