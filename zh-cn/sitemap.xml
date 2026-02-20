@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://PeterZhang9595.github.io/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -31,7 +31,7 @@
                 />
   </url><url>
     <loc>https://PeterZhang9595.github.io/categories/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -58,11 +58,11 @@
                 href="https://PeterZhang9595.github.io/categories/"
                 />
   </url><url>
-    <loc>https://PeterZhang9595.github.io/categories/paper-reading/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <loc>https://PeterZhang9595.github.io/categories/courses/</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://PeterZhang9595.github.io/post/</loc>
-    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -83,6 +83,12 @@
                 hreflang="zh-cn"
                 href="https://PeterZhang9595.github.io/post/"
                 />
+  </url><url>
+    <loc>https://PeterZhang9595.github.io/p/data100/</loc>
+    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://PeterZhang9595.github.io/categories/paper-reading/</loc>
+    <lastmod>2026-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://PeterZhang9595.github.io/p/recommendation/</loc>
     <lastmod>2026-02-01T00:00:00+00:00</lastmod>
@@ -231,8 +237,6 @@
   </url><url>
     <loc>https://PeterZhang9595.github.io/p/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://PeterZhang9595.github.io/categories/courses/</loc>
   </url><url>
     <loc>https://PeterZhang9595.github.io/%E5%85%B3%E4%BA%8E/</loc>
   </url><url>
