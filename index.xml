@@ -29,10 +29,13 @@
 &lt;/ul&gt;
 &lt;h1 id=&#34;资源汇总&#34;&gt;资源汇总
 &lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;课程网站：https://ds100.org/&lt;/li&gt;
-&lt;li&gt;课程作业：https://github.com/DS-100
+&lt;li&gt;课程网站：&lt;a class=&#34;link&#34; href=&#34;https://ds100.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;课程作业：&lt;a class=&#34;link&#34; href=&#34;https://github.com/DS-100&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;labs&lt;/a&gt;
 作业需要本地配环境运行，但是难度不大。&lt;/li&gt;
-&lt;li&gt;课程教材：https://learningds.org/intro.html
+&lt;li&gt;课程教材：&lt;a class=&#34;link&#34; href=&#34;https://learningds.org/intro.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;book&lt;/a&gt;
 没怎么看过这个教材，如果想快速过一下这门课的话看课程网站的Course Notes就可以了。&lt;/li&gt;
 &lt;li&gt;我的资料：&lt;a class=&#34;link&#34; href=&#34;https://github.com/PeterZhang9595/winter26&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;笔记+作业&lt;/a&gt;
