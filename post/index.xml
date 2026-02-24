@@ -13,8 +13,8 @@
         <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>https://PeterZhang9595.github.io/p/data100/</guid>
-        <description>&lt;h1 id=&#34;课程简介&#34;&gt;课程简介
-&lt;/h1&gt;&lt;ul&gt;
+        <description>&lt;h2 id=&#34;课程简介&#34;&gt;课程简介
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;所属大学：UCB&lt;/li&gt;
 &lt;li&gt;先修要求：线性代数、Python编程、基础统计&lt;/li&gt;
 &lt;li&gt;课程难度：🌟🌟&lt;/li&gt;
@@ -27,8 +27,8 @@
 &lt;li&gt;课堂：基本上在数学以及算法方面的难点都是一笔带过的，对一些编程操作、数据处理过程的讲解很详细，而且机器学习部分虽然难度低但是逻辑链非常完善，适合入门者观看。累计27次课，每次课80min左右。&lt;/li&gt;
 &lt;li&gt;作业：使用jupyter notebook完成，引导非常到位甚至有点太到位了。难度不大，一共有大概25次作业，每次基本上都是按照要求进行代码填空即可，1-2小时即可完成。课程还有两个project，但是其实和平时作业难度相当。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;资源汇总&#34;&gt;资源汇总
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;资源汇总&#34;&gt;资源汇总
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;课程网站：&lt;a class=&#34;link&#34; href=&#34;https://ds100.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;website&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;课程作业：&lt;a class=&#34;link&#34; href=&#34;https://github.com/DS-100&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -41,8 +41,8 @@
     &gt;笔记+作业&lt;/a&gt;
 里面是我的一些简单的课程notes以及作业的实现，仅供参考。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;学习收获&#34;&gt;学习收获
-&lt;/h1&gt;&lt;p&gt;这是我第一个真正意义上自学完成的课程，也算是突破了之前每次自学课程的时候新鲜劲一过就不知不觉半途而废的“自学魔咒”。&lt;/p&gt;
+&lt;h2 id=&#34;学习收获&#34;&gt;学习收获
+&lt;/h2&gt;&lt;p&gt;这是我第一个真正意义上自学完成的课程，也算是突破了之前每次自学课程的时候新鲜劲一过就不知不觉半途而废的“自学魔咒”。&lt;/p&gt;
 &lt;p&gt;一直以来UCB的课程都是我的首选，&lt;s&gt;因为他们给的实在太多了。&lt;/s&gt;这门课也延续了以往UCB课程的特点，课程资源及其丰富详实，如果是在PKU内的一门课，我会觉得它太过于冗余且耗费精力，但是作为自学资源，这反而有利于更加个性化的学习路径的规划。&lt;/p&gt;
 &lt;p&gt;感谢Narges Norouzi以及Joseph E. Gonzalez两位教授开源了课程的全部作业代码以及笔记，也感谢你们在课程中设计的一个个通俗易懂的demo。&lt;/p&gt;
 &lt;p&gt;这门课中难能可贵的一点是，它指出了数据科学中一些“不那么科学”的内容，比如在房价预测project中，深入探讨了如何用量化的方式去定义诸如“公平”这类的非定量但是是社会核心价值观念所追求的东西。在现实应用场景中亦如是，如何制定数据的评判标准？如何利用数据对人、人群的行为进行归因？这不仅仅是数学和计算机的问题，更是历史、政治和社会学的综合问题。与人斗，其乐无穷。&lt;/p&gt;
