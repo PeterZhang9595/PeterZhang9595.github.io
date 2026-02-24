@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://PeterZhang9595.github.io/</loc>
-    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -31,7 +31,7 @@
                 />
   </url><url>
     <loc>https://PeterZhang9595.github.io/categories/</loc>
-    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -39,13 +39,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://PeterZhang9595.github.io/ja/categories/"
+                hreflang="zh-tw"
+                href="https://PeterZhang9595.github.io/zh-tw/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
-                href="https://PeterZhang9595.github.io/zh-tw/categories/"
+                hreflang="ja"
+                href="https://PeterZhang9595.github.io/ja/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -59,10 +59,13 @@
                 />
   </url><url>
     <loc>https://PeterZhang9595.github.io/categories/courses/</loc>
-    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://PeterZhang9595.github.io/p/nand2tetris1/</loc>
+    <lastmod>2026-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://PeterZhang9595.github.io/post/</loc>
-    <lastmod>2026-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://PeterZhang9595.github.io/p/data100/</loc>
     <lastmod>2026-02-20T00:00:00+00:00</lastmod>
