@@ -13,7 +13,7 @@
         <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>https://PeterZhang9595.github.io/p/nand2tetris1/</guid>
-        <description>&lt;h1 id=&#34;project1elementary-logic-gates&#34;&gt;Project1:Elementary Logic Gates
+        <description>&lt;img src="https://PeterZhang9595.github.io/p/nand2tetris1/duola.png" alt="Featured image of post Nand2Tetris Project(1)" /&gt;&lt;h1 id=&#34;project1elementary-logic-gates&#34;&gt;Project1:Elementary Logic Gates
 &lt;/h1&gt;&lt;p&gt;在Nand2Tetris的第一个project中，我们将使用基础的HDL语言逐步实现一系列基础的逻辑门。&lt;/p&gt;
 &lt;h2 id=&#34;实现方式&#34;&gt;实现方式
 &lt;/h2&gt;&lt;p&gt;在作业中我们通过编写底层的HDL代码实现逻辑门以满足更高的抽象层面对逻辑门的功能要求。&lt;/p&gt;
@@ -699,7 +699,7 @@ $$&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
         <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>https://PeterZhang9595.github.io/p/data100/</guid>
-        <description>&lt;h2 id=&#34;课程简介&#34;&gt;课程简介
+        <description>&lt;img src="https://PeterZhang9595.github.io/p/data100/pandas.png" alt="Featured image of post UCB Data100 学习总结" /&gt;&lt;h2 id=&#34;课程简介&#34;&gt;课程简介
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;所属大学：UCB&lt;/li&gt;
 &lt;li&gt;先修要求：线性代数、Python编程、基础统计&lt;/li&gt;
