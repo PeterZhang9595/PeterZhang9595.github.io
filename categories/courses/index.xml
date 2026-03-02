@@ -16,14 +16,18 @@
         <description>&lt;img src="https://PeterZhang9595.github.io/p/nand2tetris3/RAM-vs-ROM.png" alt="Featured image of post Nand2Tetris Project(3)" /&gt;&lt;h1 id=&#34;project3-memory&#34;&gt;Project3: Memory
 &lt;/h1&gt;&lt;p&gt;在本次项目中我们将从寄存器出发，逐步实现不同大小的RAM。&lt;/p&gt;
 &lt;h2 id=&#34;bit&#34;&gt;Bit
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://PeterZhang9595.github.io/image.png&#34;
-	
-	
-	
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://PeterZhang9595.github.io/p/nand2tetris3/image.png&#34;
+	width=&#34;519&#34;
+	height=&#34;425&#34;
+	srcset=&#34;https://PeterZhang9595.github.io/p/nand2tetris3/image_hu_bb2489b9ebee4902.png 480w, https://PeterZhang9595.github.io/p/nand2tetris3/image_hu_6ffa65fedaa999c.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;register&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;122&#34;
+		data-flex-basis=&#34;293px&#34;
 	
 &gt;
 这个问题的主要难点在于如何去设置每一轮中DFF的输出作为Mux的输入。&lt;/p&gt;
