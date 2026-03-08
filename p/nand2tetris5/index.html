@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="吾家电脑初长成，力拔山兮气盖世">
+<title>Nand2Tetris Project(5)</title>
+
+<link rel='canonical' href='https://PeterZhang9595.github.io/p/nand2tetris5/'>
+
+<link rel="stylesheet" href="/scss/style.min.833d6eed45de56f48306bf57268d5b8cdfc8a60e8e7bdc99810464fcd033f7c6.css"><meta property='og:title' content="Nand2Tetris Project(5)">
+<meta property='og:description' content="吾家电脑初长成，力拔山兮气盖世">
+<meta property='og:url' content='https://PeterZhang9595.github.io/p/nand2tetris5/'>
+<meta property='og:site_name' content='zyy&#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-08T00:00:00&#43;00:00'/><meta property='og:image' content='https://PeterZhang9595.github.io/p/nand2tetris5/xiangyu.png' />
+<meta name="twitter:title" content="Nand2Tetris Project(5)">
+<meta name="twitter:description" content="吾家电脑初长成，力拔山兮气盖世"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://PeterZhang9595.github.io/p/nand2tetris5/xiangyu.png' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/mio2_hu_82cdb0492756dd53.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🏃</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zyy&#39;s blog</a></h1>
+            <h2 class="site-description">行胜于言</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/PeterZhang9595'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://PeterZhang9595.github.io/en/" >English</option>
+                                
+                                    <option value="https://PeterZhang9595.github.io/" selected>简体中文</option>
+                                
+                                    <option value="https://PeterZhang9595.github.io/ja/" >日本語</option>
+                                
+                                    <option value="https://PeterZhang9595.github.io/zh-tw/" >正體中文</option>
+                                
+                                    <option value="https://PeterZhang9595.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#cpu">CPU</a></li>
+    <li><a href="#memory">Memory</a></li>
+    <li><a href="#computer">Computer</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/nand2tetris5/">
+                <img src="/p/nand2tetris5/xiangyu_hu_da6520cdf1c6976f.png"
+                        srcset="/p/nand2tetris5/xiangyu_hu_da6520cdf1c6976f.png 800w, /p/nand2tetris5/xiangyu_hu_fbad21487374eed4.png 1600w"
+                        width="800" 
+                        height="420" 
+                        loading="lazy"
+                        alt="Featured image of post Nand2Tetris Project(5)" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/courses/" style="background-color: #1b782f; color: #ffffffe4;">
+                Courses
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/nand2tetris5/">Nand2Tetris Project(5)</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            吾家电脑初长成，力拔山兮气盖世
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-03-08T00:00:00Z'>Mar 08, 2026</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="project-5-computer">Project 5: Computer
+</h1><p>在本项目中我们将对之前完成的（并非）各个计算机组成部分进行整合、连接，最终制造成为一个可以运行的Hack计算机。</p>
+<h2 id="cpu">CPU
+</h2><p>首先回归课程中的几个核心知识点。
+<img src="/p/nand2tetris5/image.png"
+	width="1000"
+	height="601"
+	srcset="/p/nand2tetris5/image_hu_70e3beb00e99bbbd.png 480w, /p/nand2tetris5/image_hu_1ca609807371a4cd.png 1024w"
+	loading="lazy"
+	
+		alt="图1:cpu"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="166"
+		data-flex-basis="399px"
+	
+>
+<img src="/p/nand2tetris5/image-1.png"
+	width="1000"
+	height="383"
+	srcset="/p/nand2tetris5/image-1_hu_894edcec8f86e163.png 480w, /p/nand2tetris5/image-1_hu_92ce0c745c67958d.png 1024w"
+	loading="lazy"
+	
+		alt="A instruction"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="261"
+		data-flex-basis="626px"
+	
+>
+<img src="/p/nand2tetris5/image-2.png"
+	width="1017"
+	height="513"
+	srcset="/p/nand2tetris5/image-2_hu_167554cd74d389e3.png 480w, /p/nand2tetris5/image-2_hu_8bcf313ed709d9d0.png 1024w"
+	loading="lazy"
+	
+		alt="C instruction"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="198"
+		data-flex-basis="475px"
+	
+>
+<strong>首先需要明确的一点，也是我们操作的入手点，就是我们将要写的这种架构的CPU究竟能处理哪些类型的指令？显然我们可以处理A类型的指令和C类型的指令，A主要是涉及到向A-寄存器中存入数据，相对简单；而C主要是操控ALU进行一些运算，同时涉及一些向内存中的读写，以及对程序计数器的状态修改。</strong></p>
+<p>我一开始写CPU的时候迟迟无法下笔，就是因为没有搞清楚CPU实现的根本入手点，导致无法推测出图1中第一个$MUX16$的含义。</p>
+<p>而如果搞明白这一点，我们就可以知道第一个$MUX16$的作用：让CPU知道自己处理的到底是A-instruction还是C-instruction。这需要我们读入机器指令的第15位作为Control bit。如果$c=0$,那么执行A-instruction，把instruction作为地址输出；反之则执行C-instruction。</p>
+<p>这里的第二个难点是，执行C-instruction的时候，为什么要把 <em>ALU output</em> 传出去？</p>
+<blockquote>
+<p>这里还涉及到对整个架构运行顺序的一点理解。在第一个时钟周期内，我们无法进行任何ALU的运算，因为我们没有在A或者D这两个寄存器中存入任何数据，而寄存器只有在下一个时钟周期的时候才会把它存储的值发射出去。</p>
+</blockquote>
+<p>所以比如说我们想要让ALU运行一个指令。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@R10
+</span></span><span class="line"><span class="cl">M;JMP
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>它会被拆成两句话，第一句话是取数据地址，作为下一轮的<code>inM</code>。而此时PC++，新的instruction指令传入，但是它不是直接通过那张图里面显式画出的方式传到对应的ALU和PC里面的，而是通过一些未画出的线，以control bit(s)的身份传入其中的。</p>
+<p>因此我们只需要按照图中的顺序，分别完成每个部分的传输即可。翻阅课程教材第2课和第4课的内容，找到对应的指令编码各个位置的含义即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">CHIP</span> <span class="n">CPU</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">IN</span>  <span class="n">inM</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span>         <span class="o">//</span> <span class="n">M</span> <span class="n">value</span> <span class="n">input</span>  <span class="p">(</span><span class="n">M</span> <span class="o">=</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">RAM</span><span class="p">[</span><span class="n">A</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instruction</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="o">//</span> <span class="n">Instruction</span> <span class="k">for</span> <span class="n">execution</span>
+</span></span><span class="line"><span class="cl">        <span class="n">reset</span><span class="p">;</span>           <span class="o">//</span> <span class="n">Signals</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">re</span><span class="o">-</span><span class="n">start</span> <span class="n">the</span> <span class="n">current</span>
+</span></span><span class="line"><span class="cl">                         <span class="o">//</span> <span class="n">program</span> <span class="p">(</span><span class="n">reset</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="k">continue</span> <span class="n">executing</span>
+</span></span><span class="line"><span class="cl">                         <span class="o">//</span> <span class="n">the</span> <span class="n">current</span> <span class="n">program</span> <span class="p">(</span><span class="n">reset</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">OUT</span> <span class="n">outM</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span>        <span class="o">//</span> <span class="n">M</span> <span class="n">value</span> <span class="n">output</span>
+</span></span><span class="line"><span class="cl">        <span class="n">writeM</span><span class="p">,</span>          <span class="o">//</span> <span class="n">Write</span> <span class="n">to</span> <span class="n">M</span><span class="err">?</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">addressM</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span>    <span class="o">//</span> <span class="n">Address</span> <span class="ow">in</span> <span class="n">data</span> <span class="n">memory</span> <span class="p">(</span><span class="n">of</span> <span class="n">M</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pc</span><span class="p">[</span><span class="mi">15</span><span class="p">];</span>          <span class="o">//</span> <span class="n">address</span> <span class="n">of</span> <span class="n">next</span> <span class="n">instruction</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">PARTS</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Mux16</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">instruction</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">aluOutput1</span><span class="p">,</span><span class="n">sel</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">output1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">//</span><span class="n">here</span> <span class="n">is</span> <span class="n">important</span><span class="p">,</span><span class="n">decide</span> <span class="n">whether</span> <span class="n">store</span> <span class="n">the</span> <span class="n">alu</span> <span class="n">output</span> <span class="n">to</span> <span class="n">A</span><span class="o">-</span><span class="n">register</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Not</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">isA</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Or</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">isA</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">loadA</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ARegister</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="n">output1</span><span class="p">,</span><span class="nb">load</span><span class="o">=</span><span class="n">loadA</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">output2</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">outputAddress</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">outputForPC</span><span class="p">,</span><span class="n">out</span><span class="p">[</span><span class="mf">0.</span><span class="o">.</span><span class="mi">14</span><span class="p">]</span><span class="o">=</span><span class="n">addressM</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="n">decide</span> <span class="n">the</span> <span class="n">second</span> <span class="n">input</span> <span class="n">of</span> <span class="n">alu</span> <span class="n">comes</span> <span class="n">from</span> <span class="n">A</span> <span class="ow">or</span> <span class="n">from</span> <span class="n">M</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Mux16</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">output2</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">inM</span><span class="p">,</span><span class="n">sel</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">output3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="n">decide</span> <span class="n">whether</span> <span class="n">store</span> <span class="n">the</span> <span class="n">alu</span> <span class="n">output</span> <span class="n">to</span> <span class="n">D</span><span class="o">-</span><span class="n">register</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span><span class="n">b</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">loadD</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DRegister</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="n">aluOutput2</span><span class="p">,</span><span class="nb">load</span><span class="o">=</span><span class="n">loadD</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">output4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">ALU</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">output4</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">output3</span><span class="p">,</span><span class="n">zx</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span><span class="n">nx</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span><span class="n">zy</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span><span class="n">ny</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="n">f</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">no</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">outM</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">aluOutput1</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">aluOutput2</span><span class="p">,</span><span class="n">zr</span><span class="o">=</span><span class="n">zr</span><span class="p">,</span><span class="n">ng</span><span class="o">=</span><span class="n">ng</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span><span class="n">b</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">writeM</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="n">judge</span> <span class="n">according</span> <span class="n">to</span> <span class="n">the</span> <span class="n">output</span> <span class="n">of</span> <span class="n">alu</span> <span class="n">with</span> <span class="n">the</span> <span class="n">instruction</span> <span class="n">on</span> <span class="s1">&#39;jump&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Not</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="n">zr</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">notzr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Not</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="n">ng</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">notng</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">notzr</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">notng</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">ps</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">load1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">zr</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">load2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ng</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">load3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Or</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">load1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">load2</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">temp1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Or</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">load3</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">temp1</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">temp2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">instruction</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span><span class="n">b</span><span class="o">=</span><span class="n">temp2</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">loadPC</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">PC</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="n">outputForPC</span><span class="p">,</span><span class="nb">load</span><span class="o">=</span><span class="n">loadPC</span><span class="p">,</span><span class="n">inc</span><span class="o">=</span><span class="bp">true</span><span class="p">,</span><span class="n">reset</span><span class="o">=</span><span class="n">reset</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">outpc</span><span class="p">,</span><span class="n">out</span><span class="p">[</span><span class="mf">0.</span><span class="o">.</span><span class="mi">14</span><span class="p">]</span><span class="o">=</span><span class="n">pc</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>自此，我们基本完成了一个CPU架构。这部分的设计精巧而复杂，值得反复品鉴。</p>
+<h2 id="memory">Memory
+</h2><p>和CPU相比，内存的实现就要简单很多很多了。
+<img src="/p/nand2tetris5/image-3.png"
+	width="759"
+	height="562"
+	srcset="/p/nand2tetris5/image-3_hu_475701df29ceeb72.png 480w, /p/nand2tetris5/image-3_hu_1e37666145b46541.png 1024w"
+	loading="lazy"
+	
+		alt="memory"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="135"
+		data-flex-basis="324px"
+	
+>
+这个过程可以基本拆解为以下几步：</p>
+<ul>
+<li>判断输入的数据是否应该被存入内存，应该被存入哪个内存。（这一部分我一开始出错了）</li>
+<li>并行从RAM,SCREEN,KBD中分别获得output</li>
+<li>使用MUX根据地址判断应该输出哪个部分的内存读取结果</li>
+</ul>
+<p>这里还有一点需要我们注意，就是在硬件电路中我们虽然无法直接实现两个数比较大小，但是由于所有数字存在的形式都是二进制的格式，所以我们可以根据特定的二进制位进行比较。</p>
+<p>比如本题，我们想比较address和$16384=2^{14}$，如果address比后者小的话，第15位应该是0，反之是1。这就为我们使用MUX16提供了一个很好的入手点。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">CHIP</span> <span class="n">Memory</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">IN</span> <span class="ow">in</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="nb">load</span><span class="p">,</span> <span class="n">address</span><span class="p">[</span><span class="mi">15</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">OUT</span> <span class="n">out</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">PARTS</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">address</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span><span class="n">b</span><span class="o">=</span><span class="nb">load</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">loadScreen</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Not</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="n">address</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">isRAM</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">And</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">isRAM</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="nb">load</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">loadRAM</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">RAM16K</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="ow">in</span><span class="p">,</span><span class="nb">load</span><span class="o">=</span><span class="n">loadRAM</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="n">address</span><span class="p">[</span><span class="mf">0.</span><span class="o">.</span><span class="mi">13</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">outRAM</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Screen</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="ow">in</span><span class="p">,</span><span class="nb">load</span><span class="o">=</span><span class="n">loadScreen</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="n">address</span><span class="p">[</span><span class="mf">0.</span><span class="o">.</span><span class="mi">12</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">outScreen</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Keyboard</span><span class="p">(</span><span class="n">out</span><span class="o">=</span><span class="n">outKBD</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Mux16</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">outScreen</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">outKBD</span><span class="p">,</span><span class="n">sel</span><span class="o">=</span><span class="n">address</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">out1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Mux16</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">outRAM</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">out1</span><span class="p">,</span><span class="n">sel</span><span class="o">=</span><span class="n">address</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span><span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="computer">Computer
+</h2><p><img src="/p/nand2tetris5/image-4.png"
+	width="964"
+	height="637"
+	srcset="/p/nand2tetris5/image-4_hu_99d549a8d6a58025.png 480w, /p/nand2tetris5/image-4_hu_8ebf7e44e3351b8d.png 1024w"
+	loading="lazy"
+	
+		alt="computer"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="151"
+		data-flex-basis="363px"
+	
+>
+按照此图直接无脑连接即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">CHIP</span> <span class="n">Computer</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">IN</span> <span class="n">reset</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">PARTS</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ROM32K</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="n">pc</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">instruction</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CPU</span><span class="p">(</span><span class="n">inM</span><span class="o">=</span><span class="n">inM</span><span class="p">,</span><span class="n">instruction</span><span class="o">=</span><span class="n">instruction</span><span class="p">,</span><span class="n">reset</span><span class="o">=</span><span class="n">reset</span><span class="p">,</span><span class="n">outM</span><span class="o">=</span><span class="n">outM</span><span class="p">,</span><span class="n">writeM</span><span class="o">=</span><span class="n">writeM</span><span class="p">,</span><span class="n">addressM</span><span class="o">=</span><span class="n">addressM</span><span class="p">,</span><span class="n">pc</span><span class="o">=</span><span class="n">pc</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Memory</span><span class="p">(</span><span class="ow">in</span><span class="o">=</span><span class="n">outM</span><span class="p">,</span><span class="nb">load</span><span class="o">=</span><span class="n">writeM</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="n">addressM</span><span class="p">,</span><span class="n">out</span><span class="o">=</span><span class="n">inM</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这一章Project的难度已经有了比较明显的提升，当然关键不是在于编程本身，而是在于理解整个电路进行各种运算的内在逻辑。在写这个Project之前我以为我已经很了解电脑内部的运行机制了，但是代码实现的时候我发现我只是知道了各个部分的作用，但是没有把它们串联成为一个整体，而这份Project很好地帮助我加深了对电脑内部体系结构的理解。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/nand2tetris4/">
+        
+        
+            <div class="article-image">
+                <img src="/p/nand2tetris4/ml.af0332f61188cf78124e5f66aaf9bc01_hu_c40e5a6efbe4575d.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Nand2Tetris Project(4)"
+                        data-key="nand2tetris(4)" 
+                        data-hash="md5-rwMy9hGIz3gSTl9mqvm8AQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Nand2Tetris Project(4)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/nand2tetris3/">
+        
+        
+            <div class="article-image">
+                <img src="/p/nand2tetris3/RAM-vs-ROM.abc98fae3802444e59cc50ed3b7f0309_hu_ce4514f3819f20e.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Nand2Tetris Project(3)"
+                        data-key="nand2tetris(3)" 
+                        data-hash="md5-q8mPrjgCRE5ZzFDtO38DCQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Nand2Tetris Project(3)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/nand2tetris2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/nand2tetris2/alu.2063b9892a950dc27d7cbb1b727f54fd_hu_885e6664d29b4119.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Nand2Tetris Project(2)"
+                        data-key="nand2tetris(2)" 
+                        data-hash="md5-IGO5iSqVDcJ9fLsbcn9U/Q==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Nand2Tetris Project(2)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/nand2tetris1/">
+        
+        
+            <div class="article-image">
+                <img src="/p/nand2tetris1/duola.0998296b92dd7c543eb0d32ed6824947_hu_8c00745d14d384a2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Nand2Tetris Project(1)"
+                        data-key="nand2tetris(1)" 
+                        data-hash="md5-CZgpa5LdfFQ&#43;sNMu1oJJRw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Nand2Tetris Project(1)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/data100/">
+        
+        
+            <div class="article-image">
+                <img src="/p/data100/pandas.d873436ce73ec0a6c6e67051feeb4031_hu_822a61245b26505f.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post UCB Data100 学习总结"
+                        data-key="data100" 
+                        data-hash="md5-2HNDbOc&#43;wKbG5nBR/utAMQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">UCB Data100 学习总结</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 zyy
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
