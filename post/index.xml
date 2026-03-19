@@ -5,9 +5,50 @@
         <link>https://PeterZhang9595.github.io/post/</link>
         <description>Recent content in Posts on zyy&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
+        <language>en-us</language>
         <copyright>zyy</copyright>
-        <lastBuildDate>Thu, 12 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://PeterZhang9595.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://PeterZhang9595.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>随笔</title>
+        <link>https://PeterZhang9595.github.io/p/essay/</link>
+        <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://PeterZhang9595.github.io/p/essay/</guid>
+        <description>&lt;p&gt;随着本周最后一节课上完，我也算是处理完了一周的任务，准备承接上周末刚刚上完的Nand2Tetris课程，完成Project8。然而刚刚打开项目文件，我忽然意识到一件事情：**我已经几乎忘掉了全部细节！**除了知道我要写VM translator的第二部分，其中包含了分支判断以及函数调用这两个模块的内容，但是关于它们的具体信息、实现细节，我已经一点都不记得了，尽管我上一次观看课程视频是在四天之前。&lt;/p&gt;
+&lt;p&gt;说句实在话，如果在高中发生这种情况，我可能会开始猛烈地反思自己，然后找个时间把那些知识重新过一遍，再在意识里把它们标注为易忘记的知识，日后要多次拿出来复习。&lt;/p&gt;
+&lt;p&gt;而这次，我只是拿出了自己记得笔记、以及课程教材中的API文档，又看了一遍，然后没回想明白的部分问了一下大模型，最终也是成功地完成了这次略带难度的Project。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我不禁思考，这样的学习方式，是否是正常且有效的？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;而问题的核心，在于&lt;strong&gt;是否只有能够从头到尾地默写所有知识、复述所有细节，才算是学会了一部分内容？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我想，问题的答案很显然，如果能够做到上面的那一点，无疑是很好的，说明了对知识很高的掌握程度。但冥冥中我又总觉得这种伴随我初中、高中的学习理念，到了大学，开始出现一些不对劲的地方。&lt;/p&gt;
+&lt;p&gt;首先是时间问题。大学，即使是本科时期，知识量、覆盖面、难度，是高中望尘莫及的。如果想要像高中那样把所有的知识全部记下来，那恐怕是要付出大量的时间和精力的，个人的记忆能力能不能保证完全记住还是一件另说的事情。&lt;/p&gt;
+&lt;p&gt;其次是考察方式问题。相比于初高中评判标准里考试“一言堂”，大学期间的考试重要性已然有很大程度的下降，以计算机方向为例，通过编程项目考察一些基本的编程能力、团队合作能力、报告书写能力，也是考核的一部分，并且更加接近日后的科研或者工作情景。在这种情况下，如果坚持对知识细节进行记忆，诚然能帮助考试；然而对于编程项目来说，往往涉及到的不只是知识上的细节，还有很多课本上没有讲到的工程上的细节，这些细节非常繁琐，但是往往都可以随用随查，因此记忆带来的收益并不会太高。而在一些科研方面，更是会频繁涉及还没有加入到课本的新鲜内容，与其一心想着搜罗他们，不如真正遇到的时候再去了解。&lt;/p&gt;
+&lt;p&gt;最后是现代AI工具的问题。我认为现今的大模型就是一个非常先进的搜索工具，它解决问题的效率会远远高于以往的基于匹配算法的搜索引擎，而它的记忆能力也极其的强大，如果我们想了解某个方面的内容，一般来说问一下大模型就可以获得相关的细节内容，而且如果只是知识性的，大模型给出的答案准确率很高。&lt;/p&gt;
+&lt;p&gt;综上，其实已经否认了过去的学习方式。它真的过时了。&lt;/p&gt;
+&lt;p&gt;然而我们往往希望破除一个旧观念之后，能够立起来另外一个更好的新观念。在这个时代，我们应当如何建构自己的学习过程呢？&lt;/p&gt;
+&lt;p&gt;这里我要提出我的核心思想：&lt;strong&gt;“函数化”&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;所谓“函数化”，就是用函数的角度去理解世界上的一切事物对象。我们看待一切事物，都只看两个事情：它的input和output，输入和输出，而至于它是如何完成从输入到输出的转化这一点的，我们并不关心。这种思想，在软件编程里面非常常见，叫作封装。而使用输入和输出描述一个对象，则往往称为abstraction，即抽象。当然这种“函数化”的思想，在社会的各种运行中也非常常见，比如常见的劳务外包，就是一个函数，输入是甲方的要求和薪资，输出是相关人员完成甲方要求，而中间的各种具体措施、人员管理，则完全是劳务公司内部自己实现的，无人关心。&lt;/p&gt;
+&lt;p&gt;之所以说到“函数化”，是因为我觉得它可以推至我们一般的学习过程乃至工作过程。在大多数时候，我们只涉及两部分：call and implement，即调用和实现。当然它们二者并不是绝对分开的。很多时候我们通过组合各种被调用的函数，也能实现一个名义上新的功能；而很多时候为了去实现一个新的功能，我们也不是从盘古开天辟地开始造轮子，也是需要调用很多已经完成好的函数的。&lt;/p&gt;
+&lt;p&gt;书归正传。在“函数化”思想的指导下，我们真正需要记忆的，只有两个东西：函数的输入和输出。当然这是双向的的：在implement的时候，我们需要精准地定义函数的输入和输出，即提炼出核心问题并且构想出目标结果，才能让函数的实现过程更加有针对性；而call的时候，我们需要根据输入和输出的特征回想起哪些函数可以用来完成这个转化。一言以蔽之，我们需要记忆的，不是知识本身，而是知识和知识之间的联系。&lt;/p&gt;
+&lt;p&gt;因此也就可以引出我最终新的学习理念了。我认为，在这个时代，学习不应只是为了完成任务而进行刷课程、看教材这样的传统方式，而应该带有强烈的问题意识，在问题的指导下进行学习，才是关键。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果面对的问题有人解决过，那么就需要我们找到最合适的函数，并且调用它。这就是我们平时学习那些课本上的知识的意义。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果面对的问题是无人解决过的，那么就需要我们实现它。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然而面对这种没有可参考经验的问题，实现它又谈何容易？所以应当拆解成为两步，第一步是定位目前可以解决的部分，然后调用相关函数，其实大多数问题到这里也就结束了；第二步是找到问题的核心所在，明确暂时无人实现的函数的输入和输出，然后自己尝试不同的实现方法，直到某一个实现方法可以完成预期中函数的功能，这其实已经属于科研的范畴了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因此，这也就要求我们在学习的过程中，要积极复现他人写好的函数的实现过程：注意这里不是指的具体的实现步骤，而是实现的动机、尝试过程、优化过程等等，这能为日后我们在实现相应的函数时候给予很多的指导。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以最后回到我最初面临的情况，即在笔记、教材、AI的帮助下完成了VM translator的实现过程。这是一个典型的implement过程。而我在这个过程中，参考的都是各类API，即我这个VM translator中涉及的所有功能。所以这是属于有效的范畴。但如果我面对的问题是：请设计一个方式把VM语言转化为Assemble语言，那么我的所作所为就不再有意义。因为面对这个问题，我接受的输入是VM语言，目标输出是汇编语言，那么这个函数内部的机制都应该我自己完成设计。&lt;/p&gt;
+&lt;p&gt;所以，归根结底，大多数时候我们做的Project，虽说是实现一个函数，但是本质上这些函数已经处于一个输入和输出都被缩小到很小尺度的问题了，基本上只需要考虑调用函数的组合方式就可以了；而那些真正有难度的，往往输入和输出本身的“距离”更远，也需要更多的设计和分解。&lt;/p&gt;
+&lt;p&gt;这也正是工程师和科学家的区别。仰望星空，脚踏实地。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Nand2Tetris Project(6)</title>
         <link>https://PeterZhang9595.github.io/p/nand2tetris6/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
@@ -2097,78 +2138,6 @@ $$&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;p&gt;上完此课，我才意识到我们平时的机器学习、深度学习中常常忽略的东西，那就是数据处理、特征工程这一部分。即使随着深度学习的发展，神经网络能自动对特征进行提取，但是一些基础的数据清洗、补全、整合等等的内容，仍然是不可或缺的。因此应当完善整个技术栈，从一些基础的网页爬虫，到数据清洗、特征工程、数据库管理，最后再到深度学习来进行回归、分类等任务，都要有所涉猎乃至精通。&lt;/p&gt;
 &lt;p&gt;当然，data100仅仅是一个入门级别的课程，我们的征途，是星辰大海。&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>短视频平台常见推荐算法初探</title>
-        <link>https://PeterZhang9595.github.io/p/recommendation/</link>
-        <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://PeterZhang9595.github.io/p/recommendation/</guid>
-        <description>&lt;img src="https://PeterZhang9595.github.io/p/recommendation/tiktok.jpg" alt="Featured image of post 短视频平台常见推荐算法初探" /&gt;&lt;h2 id=&#34;动机&#34;&gt;动机
-&lt;/h2&gt;&lt;p&gt;我平时不用小红书。这几天要出去旅游，因此在小红书上找了点攻略，顺便点进了主页里面几个帖子看了看。结果等下次再进入程序的时候，发现推荐页面已经全是我日常生活中经常关注的内容了：学业、绩点、篮球、影视、演员。堪比开盒一样恐怖。当然，我没忍住点了进去，因此失去了半小时本来用于做攻略的时间。
-出于一种强烈的自尊心，我想要研究一下“我到底是怎么被击败的”，因此决定写这篇笔记记录一下一些零碎的推荐算法设计。或许了解了这些机制，能够帮助我们更快地摆脱万恶的推荐算法的精神控制吧。&lt;/p&gt;
-&lt;h2 id=&#34;抖音官方信息&#34;&gt;抖音官方信息
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;a class=&#34;link&#34; href=&#34;https://95152.douyin.com/transparency&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;抖音安全与信任中心&lt;/a&gt;&lt;/em&gt;
-虽然官话一大堆，但是还是讲了一点点真东西的。&lt;/p&gt;
-&lt;h3 id=&#34;协同过滤&#34;&gt;协同过滤
-&lt;/h3&gt;&lt;p&gt;推荐算法领域最经典的算法之一。核心思想很简单，判断两个用户的相似度，若相似度高，把一个用户看过而另外一个用户没看过的推荐给对方。
-相似度的计算一般使用余弦值方法。
-&lt;/p&gt;
-$$
-Similarity(A,B)=\frac{A \cdot B}{|A||B|}=\frac{\sum{a_i b_i}}{\sqrt{\sum{a_i^2}}\sqrt{\sum{b_i^2}}}
-$$&lt;p&gt;
-现阶段这类方法并没有被淘汰，而是融入了深度学习方法中。因此在传统方法这一部分就不赘述了。&lt;/p&gt;
-&lt;h3 id=&#34;wide--deep&#34;&gt;Wide &amp;amp; Deep
-&lt;/h3&gt;&lt;p&gt;个人理解：从整体框架上就是同时结合了简单粗暴的记录匹配+深度学习的特征提取的方法。
-Wide部分：稀疏向量输入，配合Embedding工程，作为最终的输入层。由于有一些特征本身就非常具有辨识度，比如一些显著的分类，所以它们就可以直接被送到最终的预测算子。
-Deep部分：深度神经网络对输入特征进行处理，隐式特征交叉，提高模型的泛化能力。
-具体流程可以参考下图
-&lt;img src=&#34;https://PeterZhang9595.github.io/p/recommendation/wide_deep.jpg&#34;
-	width=&#34;1280&#34;
-	height=&#34;837&#34;
-	srcset=&#34;https://PeterZhang9595.github.io/p/recommendation/wide_deep_hu_767fec777ee18ad.jpg 480w, https://PeterZhang9595.github.io/p/recommendation/wide_deep_hu_2aed32c5ce0dc87a.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;wide &amp; deep&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;152&#34;
-		data-flex-basis=&#34;367px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;双塔召回模型&#34;&gt;双塔召回模型
-&lt;/h3&gt;&lt;p&gt;在抖音的推送流中，采取的主要是双塔召回模型。
-个人理解是把内容（视频）和用户全都转化成特征向量扔到一个池子里，然后给用户推荐与他自己的用户特征相近的内容特征的那些视频。
-而正因如此就要使用深度学习模型把用户转化为用户表征，视频转化为内容表征，然后一起扔到内容池里。
-具体流程参考下图
-&lt;img src=&#34;https://PeterZhang9595.github.io/p/recommendation/two_tower.jpg&#34;
-	width=&#34;1280&#34;
-	height=&#34;837&#34;
-	srcset=&#34;https://PeterZhang9595.github.io/p/recommendation/two_tower_hu_710c4b64f3d2957e.jpg 480w, https://PeterZhang9595.github.io/p/recommendation/two_tower_hu_7cdb0688cab533a3.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;two tower&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;152&#34;
-		data-flex-basis=&#34;367px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;建立了一些推荐算法的基本直觉之后，下面是几篇经典论文的阅读笔记，由于我在这部分学习的目标主要是为了了解，因此文章规划的整体性可能不会太强，每个部分暂时视作独立板块即可。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;dnn-for-youtube-recommendations&#34;&gt;DNN for Youtube Recommendations
-&lt;/h2&gt;&lt;p&gt;首先我们从深度学习融入推荐系统的鼻祖开始，这篇论文的作者是Youtube研发团队。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://PeterZhang9595.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://PeterZhang9595.github.io/p/</guid>
-        <description></description>
         </item>
         
     </channel>
