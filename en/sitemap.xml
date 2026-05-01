@@ -32,11 +32,6 @@
     <loc>https://PeterZhang9595.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://PeterZhang9595.github.io/ja/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en-us"
                 href="https://PeterZhang9595.github.io/tags/"
                 />
@@ -44,6 +39,11 @@
                 rel="alternate"
                 hreflang="zh-tw"
                 href="https://PeterZhang9595.github.io/zh-tw/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://PeterZhang9595.github.io/ja/tags/"
                 />
     <xhtml:link
                 rel="alternate"
