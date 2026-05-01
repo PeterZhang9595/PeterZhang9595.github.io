@@ -295,7 +295,9 @@ $$L_{VAE}(\phi,\theta)=L_{VAE-Recon}(\phi,\theta)+\beta L_{VAE-Prior}(\phi)$$&lt
 &lt;p&gt;最后这部分可能看起来相对零散，其实对于这种模型架构的时候，尤其是在作业中已经给了骨架代码的情况下，还是边写边学，比如写到一个地方不知道这部分代码在干嘛或者不知道具体该如何实现的时候去查阅资料，这样的效率更高一些。&lt;/p&gt;
 &lt;p&gt;至此，本文已经基本施工完毕。接下来我将开始学习&lt;a class=&#34;link&#34; href=&#34;https://mit-6s978.github.io/schedule.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;MIT6.S978&lt;/a&gt;，尝试对生成模型有一个更全面且深入的了解。&lt;/p&gt;
-&lt;p&gt;当下即是最好。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当下即是最好。加油。頑張れ。&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
